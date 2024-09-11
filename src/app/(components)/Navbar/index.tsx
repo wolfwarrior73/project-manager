@@ -16,13 +16,11 @@ const Navbar = () => {
           />
         </div>
       </div>
+
       {/* ICONS*/}
       <div className="flex items-center">
-        <Link 
-        href="/settings"
-        className="h-min w-min rounded p-2 hover:bg-gray-100"
-        >
-          <Settings className="h-6 w-6 cursor-pointer dark:text-white" />
+        <Link href="/settings" className="h-min w-min rounded p-2 hover:bg-gray-100">
+          <Settings className="h-6 w-6 cursor-pointer dark:text-white"/>
         </Link>
         <div className="ml-2 mr-5 hidden min-h-[2em] w-[0.1rem] bg-gray-200 md:inline-block"></div>
       </div>
