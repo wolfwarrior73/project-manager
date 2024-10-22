@@ -9,7 +9,6 @@ import {
   ChevronDown,
   ChevronUp,
   Home,
-  Icon,
   Layers3,
   LockIcon,
   LucideIcon,
