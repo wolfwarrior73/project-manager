@@ -5,27 +5,29 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 /* route imports */
-import projectRoutes from "./routes/projectRoutes"
+import projectRoutes from "./routes/projectRoutes";
+import taskRoutes from "./routes/taskRoutes"
 /* configurations */
 dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin"}));
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("commen"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 /* routs */
-app.get('/',(req,res)=>{
-    res.send("This is home route")
+app.get("/", (req, res) => {
+  res.send("This is home route");
 });
 
 app.use("/projects", projectRoutes);
+app.use("/tasks", taskRoutes);
 
 /* server */
 const port = process.env.PORT || 3000;
-app.listen(port,()=>{
-    console.log(`Server running on port ${port}`)
-})
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
